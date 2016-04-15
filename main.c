@@ -72,6 +72,8 @@ int main(int argc, char **argv) {
 	if (system("stty -ctlecho") == -1) {
 		fprintf(stderr, "Can't disable Ctrl+C indication.\n");
 	}
+    for (int i = 0; i < CHARS_COUNT; i++)
+        numbers[i] = 0;
 	while ((c = getc(input_stream)) != EOF) {
 		numbers[c]++;
 		all_chars_count++;
